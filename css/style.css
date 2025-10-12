@@ -1,0 +1,342 @@
+:root {
+  --n: calc(100vh / ((100vw * 9) / 16));
+}
+
+/* ====== FIXED 16:10 RATIO SYSTEM (MacBook Air M1) ====== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black; /* black outside ratio */
+  overflow: hidden;
+}
+
+/* Outer wrapper that locks the page to 16:10 ratio */
+.aspect-ratio-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* keep fixed ratio (MacBook Air M1 = 16:10) */
+  width: 100vw;
+  height: calc(((100vw * 9) / 16) * var(--n));
+
+  background-color: #f3eeea; /* main background */
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth; /* cuộn mượt */
+}
+
+/* Inner scrollable container */
+.content {
+  width: 100%;
+  height: calc((100vw * 9 / 16));
+}
+
+/* ================== FONTS ================== */
+@font-face {
+  font-family: 'Gulfs Display';
+  src: url('../fonts/GulfsDisplay-Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Peace Sans';
+  src: url('../fonts/Peace-Sans.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('../fonts/Fredoka-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('../fonts/Fredoka-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ================== GENERAL ================== */
+body {
+  margin: 0;
+  font-family: 'Peace Sans', sans-serif;
+  background-color: #f3eeea;
+  color: #1a1a1a;
+  overflow-x: hidden;
+  padding: 0;
+  scroll-snap-type: y mandatory;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================== NAVIGATION ================== */
+.top-nav {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 92%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 60px;
+  font-size: 6vw;
+}
+
+.nav-left a {
+  display: inline-block;
+  padding: 10px 15px;
+  color: #2f4156;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  margin-right: 25px;
+  color: #ff6f61;
+  font-size: 30%;
+}
+
+/* underline effect */
+.nav-left a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1%;
+  width: 0;
+  height: 2px;
+  background: #2f4156;
+  transition: width 0.3s ease;
+}
+
+.nav-left a:hover::after {
+  width: 100%;
+}
+
+.nav-right {
+  text-align: right;
+  font-size: 20%;
+  color: #2f4156;
+}
+
+/* ================== TITLE SECTION ================== */
+.title-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-title {
+  font-size: 100%;
+  color: #2f4156;
+  transform: rotate(-5deg);
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.main-image {
+  position: absolute;
+  bottom: 0;
+  left: 47%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 90vw;
+  z-index: -1;
+}
+
+/* ================== ABOUT SECTION ================== */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  max-width: 1300px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.info-image {
+  position: absolute;
+  width: 28%;
+  border-radius: 16px;
+  transform: rotate(-5deg);
+  left: 0;
+  bottom: 0;
+  margin-bottom: 2%;
+  margin-left: 4%;
+}
+
+.info-title {
+  position: relative;
+  width: 100%;
+  left: 0;
+  margin-bottom: 30px;
+}
+
+.info-text-container {
+  position: absolute;
+  width: 50%;
+  color: #2f4156;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  font-size: 100%;
+  right: 0;
+  top: 0;
+  margin-top: 5%;
+  margin-right: 15%;
+}
+
+.info-text-container p {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #2f4156;
+  text-align: justify;
+}
+
+#hello {
+  margin-bottom: 0;
+}
+
+.info-text-container hr {
+  margin-top: 30px;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border: none;
+}
+
+/* ================== JOURNEY SECTION ================== */
+.journey-images-1 {
+  z-index: 1;
+  position: absolute;
+  width: calc(100vh + 50px);
+  height: 220px;
+  transform: rotate(77deg);
+  left: -250px;
+}
+
+.journey-img1 {
+  position: absolute;
+  animation-name: scrolldown;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  right: calc(462px * 3.5);
+  height: 100%;
+}
+
+@keyframes scrolldown {
+  to {
+    right: -500px;
+  }
+}
+
+#left1 { animation-delay: calc((24s / 6) * (6 - 1.5) * -1); }
+#left2 { animation-delay: calc((24s / 6) * (6 - 2.5) * -1); }
+#left3 { animation-delay: calc((24s / 6) * (6 - 3.5) * -1); }
+#left4 { animation-delay: calc((24s / 6) * (6 - 4.5) * -1); }
+#left5 { animation-delay: calc((24s / 6) * (6 - 5.5) * -1); }
+#left6 { animation-delay: calc((24s / 6) * (6 - 6.5) * -1); }
+
+.journey-images-2 {
+  z-index: 1;
+  position: absolute;
+  width: calc(100vh + 50px);
+  height: 220px;
+  transform: rotate(77deg);
+  left: 0;
+}
+
+.journey-img2 {
+  position: absolute;
+  animation-name: scrollup;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  left: calc(462px * 3.5);
+  height: 100%;
+}
+
+@keyframes scrollup {
+  to {
+    left: -500px;
+  }
+}
+
+#right1 { animation-delay: calc((30s / 6) * (6 - 1.5) * -1); }
+#right2 { animation-delay: calc((30s / 6) * (6 - 2.5) * -1); }
+#right3 { animation-delay: calc((30s / 6) * (6 - 3.5) * -1); }
+#right4 { animation-delay: calc((30s / 6) * (6 - 4.5) * -1); }
+#right5 { animation-delay: calc((30s / 6) * (6 - 5.5) * -1); }
+#right6 { animation-delay: calc((30s / 6) * (6 - 6.5) * -1); }
+
+/* ================== JOURNEY LINK ================== */
+.journey {
+  position: absolute;
+  width: 65%;
+  top: 0;
+  right: 0;
+  margin-top: 15%;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.journey img {
+  display: block;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.journey:hover img {
+  transform: scale(1.05);
+}
+
+/* shimmer highlight */
+.journey::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(243, 238, 234, 0.6) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  opacity: 0;
+}
+
+.journey:hover::after {
+  opacity: 1;
+  animation: swipe 1.2s linear infinite;
+}
+
+@keyframes swipe {
+  from { left: -75%; }
+  to { left: 125%; }
+}

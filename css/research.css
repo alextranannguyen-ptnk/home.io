@@ -1,0 +1,414 @@
+:root {
+    --n: calc(100vh / ((100vw * 9) / 16));
+  }
+  
+  /* ====== FIXED 16:10 RATIO SYSTEM (MacBook Air M1) ====== */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black; /* black outside ratio */
+    overflow: hidden;
+  }
+  
+  /* Outer wrapper that locks the page to 16:10 ratio */
+  .aspect-ratio-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* keep fixed ratio (MacBook Air M1 = 16:10) */
+    width: 100vw;
+    height: calc(((100vw * 9) / 16) * var(--n));
+  
+    background-color: #f3eeea; /* main background */
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth; /* cuộn mượt */
+  }
+  
+  /* Inner scrollable container */
+  .content {
+    width: 100%;
+    height: calc((100vw * 9 / 16));
+  }
+  
+  @font-face {
+      font-family: 'Gulfs Display';
+      src: url('../fonts/GulfsDisplay-Normal.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+  @font-face {
+    font-family: 'Peace Sans';
+    src: url('../fonts/Peace-Sans.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('../fonts/Fredoka-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('../fonts/Fredoka-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+    header{
+      position: fixed;
+      z-index: 1000;
+    }
+  
+    body {
+      margin: 0;
+      font-family: 'Peace Sans', sans-serif;
+      background-color: #f3eeea;
+      color: #2f4156;
+      overflow-x: hidden;
+      padding: 0;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .box {
+      height: fit-content;
+      width: 100%;
+      scroll-snap-align: start;
+      position: relative;
+      display: block;
+      flex-direction: column;
+      justify-content: center; /* canh giữa theo chiều dọc */
+      align-items: center;     /* canh giữa theo chiều ngang nếu cần */
+    }
+
+    .seperation{
+      width: 100%;
+      height: auto;
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+    
+    .top-nav {
+      display: flex;
+      position: fixed;
+      top: 0;
+      width: 92%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-left a {
+      margin-right: 25px;
+      text-decoration: none;
+      color: #ff6f61;
+      font-size: 1.5rem;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;   /* align email and hamburger vertically */
+      gap: 15px;             /* space between email and hamburger */
+      right: 3%;
+      top: 0;
+      position: fixed;
+      z-index: 1000;
+    }
+    
+    /* Hamburger styling */
+    .hamburger {
+      width: 30px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      cursor: pointer;
+    }
+    
+    .hamburger span {
+      height: 4px;
+      background: #2f4156;
+      border-radius: 2px;
+    }
+    
+    /* Dropdown aligned under hamburger */
+    .dropdown {
+      display: none;
+      width:400px;
+      height: 130px;
+      position: absolute;
+      justify-content: space-around;
+      top: 70%;
+      right: 20px;
+      background: #f3eeea;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      z-index: 1000;
+      text-align: right ;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+  }
+  
+    .contact-info{
+      margin-right: 3%;
+      margin-top: 3%;
+    }
+    
+    .dropdown a {
+      display: inline-block;   /* shrink to word length */
+      padding: 10px 15px;
+      color: #2f4156;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    /* underline effect */
+    .dropdown a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1%; /* sits right under the text */
+      width: 0;
+      height: 2px;
+      background: #2f4156;
+      transition: width 0.3s ease;
+    }
+    
+    .dropdown a:hover::after {
+      width: 100%; /* underline only spans the word */
+    }
+  
+    .dropdown a {
+      margin: auto;
+      padding: 10px 15px;
+      color: #2f4156;
+      text-decoration: none;
+      transition: background 0.2s;
+      -webkit-transition: background 0.2s;
+      -moz-transition: background 0.2s;
+      -ms-transition: background 0.2s;
+      -o-transition: background 0.2s;
+  }
+    
+    .dropdown a:hover {
+      background: #f3eeea;
+    }
+    
+    /* Show dropdown when hovering */
+    .hamburger:hover + .dropdown,
+    .dropdown:hover {
+      display: block;
+      padding: auto;
+    }  
+
+    .research-image{
+        width: 100%;
+      }
+
+  .research1{
+    display: flex;
+    width: 95%;
+  }
+
+  .ASD-title{
+    width: 50%;
+    height: auto;
+    margin-left: 45%;
+  }
+
+  .ASD-showcase{
+    width: 95%;
+  }
+
+  .ASD-info{
+    margin-top: 5%;
+    width: 95%;
+  }
+
+  .buttons-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .ASD-buttons{
+    width: 25%;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+  }
+
+  .ASD-buttons:hover{
+    transform: scale(1.05);
+  }
+
+  .ASDimgshowcase{
+    margin-top: 3%;
+    width: 100%;
+    background-color: #c1cee2;
+    height: 23vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .ASD-images{
+    height: 20vw;
+  }
+
+.research2{
+  width: 100%;
+  display: flex;
+  margin-top: 5%;
+}
+
+  .Wrapper-info{
+    width: 90%;
+    margin-left: 2%; 
+  }
+  .Wrapper-showcase{
+    width: 105%;
+  }
+
+  .Wrapper-button{
+    width: 20%;
+    margin-right: auto;
+    margin-left: 4%;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+}
+
+  .Wrapper-button:hover{
+    transform: scale(1.05);
+  }
+
+  .intern1{
+    width: 100%;
+    position: relative;
+    height: 50vw;
+  }
+
+  .Deslab-info{
+    position: absolute;
+    width: 50%;
+    top: 15%;
+  }
+
+  .Deslab-showcase{
+    position: absolute;
+    width: 55%;
+    right: 0;
+    top: 0;
+  }
+
+  .Deslab-button{
+    width: 12%;
+    position: absolute;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+  }
+
+  .Deslab-button:hover{
+    transform: scale(1.05);
+  }
+
+
+  #Deslab-poster{
+    top: 65%;
+    left: 1%;
+  }
+
+  #Deslab-report{
+    top: 65%;
+    left: 14%;
+  }
+
+  .intern2{
+    width: 100%;
+    position: relative;
+    height: 50vw;
+  }
+
+  .BrainAI-info{
+    position: absolute;
+    width: 55%;
+    top: 9%;
+    right: 1%;
+  }
+
+  .BrainAI-showcase{
+    position: absolute;
+    width: 50%;
+    left: 0;
+    top: 0;
+  }
+
+  .BrainAI-button{
+    width: 12%;
+    position: absolute;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+  }
+
+  .BrainAI-button:hover{
+    transform: scale(1.05);
+  }
+
+
+  #BrainAI-report{
+    top: 63%;
+    right: 2%;
+  }
+
+  #BrainAI-poster{
+    top: 63%;
+    right: 15%;
+  }
+
+  .container-product1{
+    position: relative;
+  }
+  .car-title{
+    width: 80%;
+    position: absolute;
+    top: 0;
+  }
+
+  .product1{
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding-top: 7%;
+  }
+
+  .car-showcase{
+    width: 100%;
+  }
+
+  .car-info{
+    width:90%;
+    margin-left: 3%;
+    margin-top: 7%;
+  }
+
+  .technical-report-button{
+    width: 30%;
+    margin-left: 3%;
+    margin-top: 3%;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+  }
+
+  .technical-report-button:hover{
+    transform: scale(1.05);
+  }
