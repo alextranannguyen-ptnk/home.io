@@ -249,10 +249,14 @@
 
   .ASD-buttons{
     width: 25%;
+  }
+
+  .ASD-buttons img{
+    width: 100%;
     transition: transform 0.25s ease, opacity 0.1s ease;
   }
 
-  .ASD-buttons:hover{
+  .ASD-buttons img:hover{
     transform: scale(1.05);
   }
 
@@ -284,14 +288,14 @@
     width: 105%;
   }
 
-  .Wrapper-button{
+  .Wrapper-button img{
     width: 20%;
     margin-right: auto;
     margin-left: 4%;
     transition: transform 0.25s ease, opacity 0.1s ease;
 }
 
-  .Wrapper-button:hover{
+  .Wrapper-button img:hover{
     transform: scale(1.05);
   }
 
