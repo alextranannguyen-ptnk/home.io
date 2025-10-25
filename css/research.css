@@ -485,3 +485,28 @@
     width: 100%;
     padding-bottom: 3%;
   }
+
+
+  .home{
+    display: flex;
+    width: 100%;
+    justify-content: center; /* 👈 centers the image horizontally */
+    align-items: center;   
+  }
+
+  .home img{
+    position: relative;
+    margin: auto;
+    width: 80%;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+}
+
+.home a {
+  display: flex;            /* make <a> act like a flex container */
+  justify-content: center;  /* center the <img> inside */
+  align-items: center;
+}
+
+  .home img:hover{
+    transform: scale(1.05);
+  }
