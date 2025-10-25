@@ -416,3 +416,72 @@
   .technical-report-button:hover{
     transform: scale(1.05);
   }
+
+  
+  .container-product2{
+    position: relative;
+  }
+
+  .product2{
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding-top: 7%;
+  }
+
+  .fall-showcase{
+    width: 110%;
+  }
+
+  .fall-info{
+    width:90%;
+    margin-left: 8%;
+  }
+
+  .slide-button{
+    width: 25%;
+    margin-left: 70%;
+    margin-top: 3%;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+  }
+
+  .slide-button:hover{
+    transform: scale(1.05);
+  }
+
+  .container-product3{
+    position: relative;
+  }
+
+  .product3{
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding-top: 7%;
+  }
+
+  .tumor-showcase{
+    width: 100%;
+  }
+
+  .tumor-info{
+    width:90%;
+    margin-left: 3%;
+    margin-top: 7%;
+  }
+
+  .vid-button{
+    width: 30%;
+    margin-left: 3%;
+    margin-top: 3%;
+    transition: transform 0.25s ease, opacity 0.1s ease;
+  }
+
+  .vid-button:hover{
+    transform: scale(1.05);
+  }
+
+  .product-showcase{
+    width: 100%;
+    padding-bottom: 3%;
+  }
