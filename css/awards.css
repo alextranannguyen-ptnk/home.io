@@ -267,3 +267,39 @@
       -ms-transform: scale(1.05);
       -o-transform: scale(1.05);
 }
+
+
+.next {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+  
+.next-title {
+  grid-column: span 4 / span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.next-title img {
+  width: 100%;
+}
+
+.next-button {
+  grid-column-start: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.next-button img {
+  width:30%;
+  transition: transform 0.25s ease, opacity 0.1s ease;
+}
+
+.next-button img:hover {
+  transform: translateX(25%);
+}
